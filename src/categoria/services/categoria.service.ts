@@ -11,4 +11,9 @@ export class CategoriaService {
   ) {}
 
  
+  async findAll(): Promise<Categoria[]> {
+    return await this.categoriaRepository.find();
+
+  }
+
 }
