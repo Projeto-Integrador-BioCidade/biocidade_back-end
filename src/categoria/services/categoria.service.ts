@@ -10,6 +10,12 @@ export class CategoriaService {
     private categoriaRepository: Repository<Categoria>,
   ) {}
 
+ 
+  async findAll(): Promise<Categoria[]> {
+    return await this.categoriaRepository.find();
+
+  }
+
   async findById(id: number): Promise<Categoria>{
 
     let buscarCategoria = await this.categoriaRepository.findOne({
