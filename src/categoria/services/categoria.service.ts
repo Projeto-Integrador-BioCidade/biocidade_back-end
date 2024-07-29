@@ -25,5 +25,5 @@ export class CategoriaService {
 
     return await this.categoriaRepository.save(categoria);
   }
-  
+ 
 }
