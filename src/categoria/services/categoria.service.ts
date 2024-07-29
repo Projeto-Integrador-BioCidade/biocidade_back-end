@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Categoria } from '../entities/categoria.entity';
 import { Repository } from 'typeorm';
@@ -9,4 +9,6 @@ export class CategoriaService {
     @InjectRepository(Categoria)
     private categoriaRepository: Repository<Categoria>,
   ) {}
+
+ 
 }
