@@ -10,5 +10,19 @@ export class CategoriaService {
     private categoriaRepository: Repository<Categoria>,
   ) {}
 
- 
+  async findById(id: number): Promise<Categoria>{
+
+    let buscarCategoria = await this.categoriaRepository.findOne({
+      where:{
+        id
+      }
+    })
+
+    if(!buscarCategoria){
+      throw new HttpException("Categoria não encontrada!", HttpStatus.NOT_FOUND)
+    }
+
+    return buscarCategoria;
+  }
+
 }
