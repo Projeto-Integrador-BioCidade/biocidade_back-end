@@ -12,5 +12,11 @@ export class CategoriaController {
       return this.categoriaService.findById(id);
   }
 
+  @Get('/tipo/:nome')
+  @HttpCode(HttpStatus.OK) 
+  findByTipo(@Param('nome') nome: string):Promise<Categoria[]>{
+      return this.categoriaService.findByTipo(nome);
+  }
+
   
 }

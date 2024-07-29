@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Categoria } from '../entities/categoria.entity';
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 
 @Injectable()
 export class CategoriaService {
@@ -23,6 +23,16 @@ export class CategoriaService {
     }
 
     return buscarCategoria;
+  }
+
+  async findByTipo(nome: string): Promise<Categoria[]>{
+
+    return await this.categoriaRepository.find({
+      where:{
+        nome: ILike(`%${nome}%`)
+      }
+    });
+
   }
 
 }
