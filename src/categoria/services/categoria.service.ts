@@ -1,10 +1,11 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Categoria } from '../entities/categoria.entity';
-import { ILike, Repository } from 'typeorm';
+import { DeleteResult, ILike, Repository } from 'typeorm';
 
 @Injectable()
 export class CategoriaService {
+
   constructor(
     @InjectRepository(Categoria)
     private categoriaRepository: Repository<Categoria>,
@@ -12,6 +13,30 @@ export class CategoriaService {
 
   async findAll(): Promise<Categoria[]> {
     return await this.categoriaRepository.find();
+  }
+
+  async findById(id: number): Promise<Categoria>{
+
+    let buscarCategoria = await this.categoriaRepository.findOne({
+      where:{
+        id
+      }
+    })
+
+    if(!buscarCategoria){
+      throw new HttpException("Categoria não encontrada!", HttpStatus.NOT_FOUND)
+    }
+
+    return buscarCategoria;
+  }
+
+  async findByTipo(nome: string): Promise<Categoria[]>{
+
+    return await this.categoriaRepository.find({
+      where:{
+        nome: ILike(`%${nome}%`)
+      }
+    });
   }
 
   async create(categoria: Categoria): Promise<Categoria> {
@@ -30,28 +55,16 @@ export class CategoriaService {
     return await this.categoriaRepository.save(categoria);
   }
 
-  async findByTipo(nome: string): Promise<Categoria[]>{
+  async delete(id: number): Promise<DeleteResult> {
+    let buscarCategoria = await this.findById(id)
 
-    return await this.categoriaRepository.find({
-      where:{
-        nome: ILike(`%${nome}%`)
-      }
-    });
-  }
-
-  async findById(id: number): Promise<Categoria>{
-
-    let buscarCategoria = await this.categoriaRepository.findOne({
-      where:{
-        id
-      }
-    })
-
-    if(!buscarCategoria){
-      throw new HttpException("Categoria não encontrada!", HttpStatus.NOT_FOUND)
+    if (!buscarCategoria) {
+      throw new HttpException('Categoria não encontrada!', HttpStatus.NOT_FOUND)
     }
 
-    return buscarCategoria;
+    return await this.categoriaRepository.delete(id)
   }
+  
 
+  
 }
