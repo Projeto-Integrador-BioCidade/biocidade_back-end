@@ -10,11 +10,14 @@ export class CategoriaService {
     private categoriaRepository: Repository<Categoria>,
   ) {}
 
+  async findAll(): Promise<Categoria[]> {
+    return await this.categoriaRepository.find();
+  }
 
   async create(categoria: Categoria): Promise<Categoria> {
     return await this.categoriaRepository.save(categoria)
   }
- 
+
   async update(categoria: Categoria): Promise<Categoria> {
     let buscaCategoria = await this.findById(categoria.id);
 
@@ -26,5 +29,29 @@ export class CategoriaService {
 
     return await this.categoriaRepository.save(categoria);
   }
- 
+
+  async findByTipo(nome: string): Promise<Categoria[]>{
+
+    return await this.categoriaRepository.find({
+      where:{
+        nome: ILike(`%${nome}%`)
+      }
+    });
+  }
+
+  async findById(id: number): Promise<Categoria>{
+
+    let buscarCategoria = await this.categoriaRepository.findOne({
+      where:{
+        id
+      }
+    })
+
+    if(!buscarCategoria){
+      throw new HttpException("Categoria não encontrada!", HttpStatus.NOT_FOUND)
+    }
+
+    return buscarCategoria;
+  }
+
 }
