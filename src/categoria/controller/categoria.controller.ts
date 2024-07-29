@@ -12,7 +12,6 @@ export class CategoriaController {
       return this.categoriaService.findById(id);
   }
 
-  
 @Get()
 @HttpCode(HttpStatus.OK)
 findAll(): Promise<Categoria[]> {
