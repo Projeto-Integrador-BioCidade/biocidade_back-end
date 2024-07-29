@@ -18,11 +18,10 @@ export class CategoriaController {
       return this.categoriaService.findByTipo(nome);
   }
 
-  
-@Get()
-@HttpCode(HttpStatus.OK)
-findAll(): Promise<Categoria[]> {
-  return this.categoriaService.findAll();
-}
+  @Get()
+  @HttpCode(HttpStatus.OK)
+  findAll(): Promise<Categoria[]> {
+    return this.categoriaService.findAll();
+  }
 
 }
