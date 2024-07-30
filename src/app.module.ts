@@ -12,7 +12,7 @@ import { Produto } from './produto/entities/produto.entity';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '0607',
+      password: 'root',
       database: 'db_biocidade',
       entities: [Categoria, Produto],
       synchronize: true,
