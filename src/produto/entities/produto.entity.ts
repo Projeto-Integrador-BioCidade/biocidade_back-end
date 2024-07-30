@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber } from "class-validator";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity({name: "tb_produtos"})
+@Entity({name: "tb_produto"})
 export class Produto{
 
     @PrimaryGeneratedColumn()
