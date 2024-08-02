@@ -4,6 +4,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: 'tb_usuario'})
 export class Usuario{
+    [x: string]: any;
 
     @PrimaryGeneratedColumn()
     id: number;
