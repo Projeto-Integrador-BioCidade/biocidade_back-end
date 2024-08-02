@@ -1,11 +1,20 @@
-import {Body,Controller,HttpCode,HttpStatus,Post,Put,Get,
-Param,ParseIntPipe,Delete,
-UseGuards,} from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  HttpCode,
+  HttpStatus,
+  Post,
+  Put,
+  Get,
+  Param,
+  ParseIntPipe,
+  Delete,
+  UseGuards,
+} from '@nestjs/common';
 import { CategoriaService } from '../services/categoria.service';
 import { Categoria } from '../entities/categoria.entity';
 import { JwtAuthGuard } from '../../auth/guard/jwt-auth.guard';
 
-@UseGuards(JwtAuthGuard)
 @Controller('/categoria')
 export class CategoriaController {
   constructor(private readonly categoriaService: CategoriaService) {}
@@ -17,9 +26,9 @@ export class CategoriaController {
   }
 
   @Get(':id')
-  @HttpCode(HttpStatus.OK) 
-  findById(@Param('id', ParseIntPipe) id: number):Promise<Categoria>{
-      return this.categoriaService.findById(id);
+  @HttpCode(HttpStatus.OK)
+  findById(@Param('id', ParseIntPipe) id: number): Promise<Categoria> {
+    return this.categoriaService.findById(id);
   }
 
   @Get('/tipo/:nome')
@@ -27,13 +36,13 @@ export class CategoriaController {
   findByTipo(@Param('nome') nome: string): Promise<Categoria[]> {
     return this.categoriaService.findByTipo(nome);
   }
-
+  @UseGuards(JwtAuthGuard)
   @Post()
   @HttpCode(HttpStatus.CREATED)
   create(@Body() categoria: Categoria): Promise<Categoria> {
     return this.categoriaService.create(categoria);
   }
-
+  @UseGuards(JwtAuthGuard)
   @Put()
   @HttpCode(HttpStatus.OK)
   update(@Body() categoria: Categoria): Promise<Categoria> {
@@ -42,8 +51,7 @@ export class CategoriaController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  delete(@Param('id', ParseIntPipe) id: number){
-    return this.categoriaService.delete(id)
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.categoriaService.delete(id);
   }
-
 }
