@@ -24,7 +24,7 @@ export class UsuarioService {
         return await this.usuarioRepository.find(
             {
                 relations:{
-                    postagem: true
+                    produto: true
                 }
             }
         );
@@ -38,7 +38,7 @@ export class UsuarioService {
                 id
             },
             relations: {
-                postagem: true
+                produto: true
             }
         });
 
