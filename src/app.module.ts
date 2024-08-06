@@ -5,15 +5,15 @@ import { ProdutoModule } from './produto/produto.module';
 import { AuthModule } from './auth/auth.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { AppController } from './app.controller';
-import { ProdService } from './auth/data/services/prod.service';
+import { ProdService } from './data/services/prod.service';
 import { ConfigModule } from '@nestjs/config';
-import { DevService } from './auth/data/services/dev.service';
+import { DevService } from './data/services/dev.service';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-TypeOrmModule.forRootAsync({
-	useClass: ProdService,
+    TypeOrmModule.forRootAsync({
+	  useClass: ProdService,
     imports: [ConfigModule],
 }),
     CategoriaModule,
