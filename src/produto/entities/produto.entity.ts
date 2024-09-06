@@ -4,6 +4,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Categoria } from "../../categoria/entities/categoria.entity";
 import { Usuario } from "../../usuario/entities/usuario.entity";
 import { ApiProperty } from "@nestjs/swagger";
+import { NumericTransformer } from "../../util/numerictransformer";
 
 
 @Entity({name: "tb_produto"})
@@ -22,8 +23,8 @@ export class Produto{
     @ApiProperty()  
     @IsNumber({maxDecimalPlaces: 2})
     @IsNotEmpty()
-    @Column({type: "decimal", precision:8, scale:2})
-    preco: number
+    @Column({type: "decimal", precision:8, scale:2, transformer: new NumericTransformer()})
+    preco: number 
 
     @ApiProperty()  
     @IsNotEmpty()
