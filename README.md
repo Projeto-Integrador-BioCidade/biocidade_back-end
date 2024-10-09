@@ -1,73 +1,95 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# BioCidade 
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Sobre o projeto
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Backend: https://biocidade-back-end.onrender.com/swagger
 
-## Description
+BioCidade é uma aplicação full stack web e mobile construída para o Projeto Integrador da Turma JS05 da Generation.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Nosso projeto foi desenvolvido pensando na ODS 11, "Cidades e Comunidades sustentáveis".
+Visando tornar as cidades e os assentamentos humanos inclusivos, seguros, resilientes e sustentáveis.
 
-## Installation
+A nossa solução é uma plataforma que conecta compradores e vendedores de materiais de construção e objetos sustentáveis. O principal objetivo é promover uma economia local mais forte e sustentável. Além disso, incentivamos a reutilização de materiais e reduzimos o impacto ambiental. Por meio da nossa plataforma, também oferecemos incentivos para compras conscientes, fomentando um consumo mais responsável.
 
+
+## Layout mobile
+![Mobile 1]() ![Mobile 2]()
+
+## Layout web
+![Web 1](Link)
+
+![Web 2]()
+
+## Modelo conceitual
+![Modelo Conceitual](https://github.com/Projeto-Integrador-BioCidade/Documentos/blob/main/db_biocidade.png)
+
+# Tecnologias utilizadas
+## Back end
+- JavaScript
+- TypeScript
+- Node.js
+- MySQL
+
+## Front end
+- HTML / CSS /
+- JS / TypeScript
+- ReactJS
+
+## Implantação em produção
+- Back end: Render
+- Front end web: Netlify
+- Banco de dados: MySQL Workbench
+
+# Como executar o projeto
+
+Para iniciar o front end, deve-se criar o arquivo .env na pasta raiz do projeto e colocar a variável ambiente com o link do back end para rodar corretamente:  VITE_API_URL=https://biocidade-back-end.onrender.com
+
+## Back end
+Pré-requisitos: Node.js / NPM
 ```bash
-$ npm install
+# clonar repositório
+git clone https://github.com/Projeto-Integrador-BioCidade/
+
+# entrar na pasta do projeto back end
+cd biocidade_back-end
+
+# executar o projeto
+yarn dev
 ```
 
-## Running the app
+## Front end web
+Pré-requisitos: Node.js / YARN
 
 ```bash
-# development
-$ npm run start
+# clonar repositório
+git clone https://github.com/Projeto-Integrador-BioCidade/biocidade_front_end
 
-# watch mode
-$ npm run start:dev
+# entrar na pasta do projeto front end web
+cd biocidade_front_end
 
-# production mode
-$ npm run start:prod
+# instalar dependências
+yarn install
+
+# executar o projeto
+yarn dev
 ```
 
-## Test
+# Autor
 
-```bash
-# unit tests
-$ npm run test
+Grupo 05
 
-# e2e tests
-$ npm run test:e2e
+Participantes:
 
-# test coverage
-$ npm run test:cov
-```
+Ana Cláudia - https://www.linkedin.com/in/anaclaudia-dev/
 
-## Support
+Gabrielli - https://www.linkedin.com/in/gabrielli-virgilio/
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Geana - https://www.linkedin.com/in/geana-almeida/
 
-## Stay in touch
+Joshua - https://www.linkedin.com/in/joshua-simionato/
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Luana - https://www.linkedin.com/in/luana-marinho/
 
-## License
+Lucas - https://linkedin.com/in/lucassrsilva/
 
-Nest is [MIT licensed](LICENSE).
+Pierre - https://www.linkedin.com/in/pierre-souza/
