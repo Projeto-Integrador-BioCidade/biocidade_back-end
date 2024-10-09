@@ -74,7 +74,7 @@ yarn install
 yarn dev
 ```
 
-# Autor
+# Autores
 
 Grupo 05
 
