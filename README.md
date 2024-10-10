@@ -12,14 +12,6 @@ Visando tornar as cidades e os assentamentos humanos inclusivos, seguros, resili
 A nossa solução é uma plataforma que conecta compradores e vendedores de materiais de construção e objetos sustentáveis. O principal objetivo é promover uma economia local mais forte e sustentável. Além disso, incentivamos a reutilização de materiais e reduzimos o impacto ambiental. Por meio da nossa plataforma, também oferecemos incentivos para compras conscientes, fomentando um consumo mais responsável.
 
 
-## Layout mobile
-![Mobile 1]() ![Mobile 2]()
-
-## Layout web
-![Web 1](Link)
-
-![Web 2]()
-
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/Projeto-Integrador-BioCidade/Documentos/blob/main/db_biocidade.png)
 
